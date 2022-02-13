@@ -26,7 +26,7 @@ And then unzip the raw data zip file into `p2raw`.
 ```
 source run_one_model.sh [dataset] [method] [MLP_hidden_dim] [Classifier_hidden_dim] [feature noise level]
 ```
-Note that for HAN, please check the readme file in `./src/DGL_HAN/`
+Note that for HAN, please check the readme file in `./src/DGL_HAN/`.
 
 ## To reproduce the results in Table 2 (with the processed raw data)
 ```
