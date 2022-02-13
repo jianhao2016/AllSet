@@ -32,6 +32,9 @@ source run_one_model.sh [dataset] [method] [MLP_hidden_dim] [Classifier_hidden_d
 source run_all_experiments.sh [method]
 ```
 
+## Issues
+If you have any problem about our code, please open an issue **and** @ us (or send us an email) in case the notification doesn't work. Our email can be found in the paper.
+
 ## Citation
 If you use our code or data in your work, please cite our paper:
 ```
