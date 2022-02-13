@@ -45,9 +45,9 @@ def get_stats(deg_list):
     tmp_list = deg_list.numpy()
     return [np.max(tmp_list), np.min(tmp_list), np.mean(tmp_list), np.median(tmp_list)]
 
-p2root = '/data/shared/pyg_data/hypergraph_dataset_updated/'
-p2raw = '/data/shared//AllSet_all_raw_data/'
-p2dgl_data = '/data/shared/dgl_data_raw/'
+p2root = '../data/hypergraph_dataset_updated/'
+p2raw = '../data//raw_data/'
+p2dgl_data = '../data/dgl_data_raw/'
 
 if not os.path.isdir(p2dgl_data):
     os.makedirs(p2dgl_data)
