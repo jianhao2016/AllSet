@@ -32,7 +32,7 @@ source run_one_model.sh [dataset] [method] [MLP_hidden_dim] [Classifier_hidden_d
 source run_all_experiments.sh [method]
 ```
 
-##Citation
+## Citation
 If you use our code or data in your work, please cite our paper:
 ```
 @inproceedings{
