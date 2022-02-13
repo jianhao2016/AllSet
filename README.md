@@ -1,6 +1,6 @@
 # AllSet
 
-This is the repo for our paper: AllSet. We prepared all codes and a subset of datasets used in our experiments. The raw data of all our datasets is available upon request and will be posted online afterwards.
+This is the repo for our paper: [You are AllSet: A Multiset Function Framework for Hypergraph Neural Networks](https://openreview.net/forum?id=hpBTIv2uy_E). We prepared all codes and a subset of datasets used in our experiments.
 
 All codes and script are in the folder `src`, and a subset of raw data are provided in folder `data`. To run the experiments, please go the the `src` folder first. 
 ## Enviroment requirement:
@@ -32,5 +32,16 @@ source run_one_model.sh [dataset] [method] [MLP_hidden_dim] [Classifier_hidden_d
 source run_all_experiments.sh [method]
 ```
 
-
+##Citation
+If you use our code or data in your work, please cite our paper:
+```
+@inproceedings{
+chien2022you,
+title={You are AllSet: A Multiset Function Framework for Hypergraph Neural Networks},
+author={Eli Chien and Chao Pan and Jianhao Peng and Olgica Milenkovic},
+booktitle={International Conference on Learning Representations},
+year={2022},
+url={https://openreview.net/forum?id=hpBTIv2uy_E}
+}
+```
 
