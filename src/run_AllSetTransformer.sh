@@ -284,26 +284,7 @@ do
             --cuda $cuda \
             --lr $lr
         echo "Finished training on ${dname} with noise 1.0"
-    elif [ "$dname" = "walmart-trips-100" ]; then
-        echo =============
-        echo ">>>>  Model:AllSetTransformer (default), Dataset: ${dname}"  
-        python train.py \
-            --method AllSetTransformer \
-            --dname $dname \
-            --All_num_layers 1 \
-            --MLP_num_layers 2 \
-            --feature_noise 1.0 \
-            --heads 8 \
-            --Classifier_num_layers 1 \
-            --MLP_hidden 256 \
-            --Classifier_hidden 128 \
-            --wd 0.0 \
-            --epochs $epochs \
-            --runs $runs \
-            --cuda $cuda \
-            --lr $lr
-        echo "Finished training on ${dname} with noise 1.0"
-    elif [ "$dname" = "house-committees-100" ]; then
+        
         echo =============
         echo ">>>>  Model:AllSetTransformer (default), Dataset: ${dname}"  
         python train.py \
@@ -330,6 +311,25 @@ do
             --dname $dname \
             --All_num_layers 1 \
             --MLP_num_layers 2 \
+            --feature_noise 1.0 \
+            --heads 8 \
+            --Classifier_num_layers 1 \
+            --MLP_hidden 256 \
+            --Classifier_hidden 128 \
+            --wd 0.0 \
+            --epochs $epochs \
+            --runs $runs \
+            --cuda $cuda \
+            --lr $lr
+        echo "Finished training on ${dname} with noise 1.0"
+        
+        echo =============
+        echo ">>>>  Model:AllSetTransformer (default), Dataset: ${dname}"  
+        python train.py \
+            --method AllSetTransformer \
+            --dname $dname \
+            --All_num_layers 1 \
+            --MLP_num_layers 2 \
             --feature_noise 0.6 \
             --heads 8 \
             --Classifier_num_layers 1 \
@@ -340,7 +340,7 @@ do
             --runs $runs \
             --cuda $cuda \
             --lr $lr
-        echo "Finished training on ${dname} with noise 0.6"
+        echo "Finished training on ${dname} with noise 0.6"   
     fi
 done
 
