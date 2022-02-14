@@ -2,7 +2,6 @@
 # coding: utf-8
 
 import os
-import ipdb
 import time
 # import math
 import torch
@@ -18,25 +17,6 @@ import torch.nn.functional as F
 import matplotlib.pyplot as plt
 
 from tqdm import tqdm
-# from datetime import datetime
-# from itertools import combinations, combinations_with_replacement
-# from typing import Union, Tuple, Optional
-# from collections import defaultdict, Counter
-
-# from torch import Tensor
-# from torch.nn import Linear
-# from torch.nn import Parameter
-# from torch.autograd import Variable
-
-# from torch_geometric.data import Data
-# from torch_geometric.nn.conv import MessagePassing, GCNConv, GATConv
-# from torch_geometric.nn.conv.gcn_conv import gcn_norm
-# from torch_geometric.datasets import Planetoid
-# from torch_geometric.typing import OptPairTensor, Adj, Size, NoneType, OptTensor
-# from torch_geometric.utils import softmax
-
-# from torch_scatter import scatter_add, scatter
-# from torch_sparse import SparseTensor, set_diag
 
 from layers import *
 from models import *
@@ -329,12 +309,21 @@ if __name__ == '__main__':
         dname = args.dname
         f_noise = args.feature_noise
         if (f_noise is not None) and dname in synthetic_list:
-            p2raw = '../data/raw_data'
+            p2raw = '../data/AllSet_all_raw_data/'
             dataset = dataset_Hypergraph(name=dname, 
                     feature_noise=f_noise,
                     p2raw = p2raw)
         else:
-            dataset = dataset_Hypergraph(name=dname)
+            if dname in ['cora', 'citeseer','pubmed']:
+                p2raw = '../data/AllSet_all_raw_data/cocitation/'
+            elif dname in ['coauthor_cora', 'coauthor_dblp']:
+                p2raw = '../data/AllSet_all_raw_data/coauthorship/'
+            elif dname in ['yelp']:
+                p2raw = '../data/AllSet_all_raw_data/yelp/'
+            else:
+                p2raw = '../data/AllSet_all_raw_data/'
+            dataset = dataset_Hypergraph(name=dname,root = '../data/pyg_data/hypergraph_dataset_updated/',
+                                         p2raw = p2raw)
         data = dataset.data
         args.num_features = dataset.num_features
         args.num_classes = dataset.num_classes

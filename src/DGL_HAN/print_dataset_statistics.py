@@ -45,9 +45,9 @@ def get_stats(deg_list):
     tmp_list = deg_list.numpy()
     return [np.max(tmp_list), np.min(tmp_list), np.mean(tmp_list), np.median(tmp_list)]
 
-p2root = '../data/hypergraph_dataset_updated/'
-p2raw = '../data//raw_data/'
-p2dgl_data = '../data/dgl_data_raw/'
+p2root = '../../data/pyg_data/hypergraph_dataset_updated/'
+p2raw = '../../data/AllSet_all_raw_data/'
+p2dgl_data = '../../data/dgl_data_raw/'
 
 if not os.path.isdir(p2dgl_data):
     os.makedirs(p2dgl_data)
@@ -55,6 +55,14 @@ if not os.path.isdir(p2dgl_data):
 for dname in tqdm(dname_list):
     for feature_noise in tqdm([0, 0.2, 0.4, 0.6, 0.8]):
         if dname not in ['house-committees-100', 'walmart-trips-100']:
+            if dname in ['cora', 'citeseer','pubmed']:
+                p2raw = '../../data/AllSet_all_raw_data/cocitation/'
+            elif dname in ['coauthor_cora', 'coauthor_dblp']:
+                p2raw = '../../data/AllSet_all_raw_data/coauthorship/'
+            elif dname in ['yelp']:
+                p2raw = '../../data/AllSet_all_raw_data/yelp/'
+            else:
+                p2raw = '../../data/AllSet_all_raw_data/'
             ds = dataset_Hypergraph(name = dname, root = p2root)
             data = ds.data
         else:

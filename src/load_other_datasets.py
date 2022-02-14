@@ -22,6 +22,7 @@ import ipdb
 import os.path as osp
 import numpy as np
 import pandas as pd
+import scipy.sparse as sp
 
 from torch_geometric.data import Data
 from torch_sparse import coalesce

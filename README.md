@@ -10,13 +10,37 @@ pytorch==1.4.0+cu100
 torch-geometric==1.6.3
 torch-scatter==2.0.4
 ```
+
+First let's setup a conda enviroment
+```
+conda create -n "AllSet" python=3.7
+conda activate AllSet
+```
+
+Then install aforementioned packages.
+```
+conda install pytorch==1.4.0 torchvision==0.5.0 cudatoolkit=10.0 -c pytorch
+pip install torch-scatter==2.0.4 -f https://pytorch-geometric.com/whl/torch-1.4.0+cu100.html
+pip install torch-sparse==0.6.0 -f https://pytorch-geometric.com/whl/torch-1.4.0+cu100.html
+pip install torch-cluster==1.5.2 -f https://pytorch-geometric.com/whl/torch-1.4.0+cu100.html
+pip install torch-geometric==1.6.3 -f https://pytorch-geometric.com/whl/torch-1.4.0+cu100.html
+```
+Finally, install some relative packages
+
+```
+pip install ipdb
+pip install tqdm
+pip install scipy
+pip install matplotlib
+```
+
 ## Generate dataset from raw data.
 
 To generate PyG or DGL dataset for training, please create the following three folders:
 ```
-p2root: '../data/pyg_data/hypergraph_dataset_updated/'
-p2raw: '../data/AllSet_all_raw_data/'
-p2dgl_data: '../data/dgl_data_raw/'
+p2root: './data/pyg_data/hypergraph_dataset_updated/'
+p2raw: './data/AllSet_all_raw_data/'
+p2dgl_data: './data/dgl_data_raw/'
 ```
 
 And then unzip the raw data zip file into `p2raw`.
@@ -28,10 +52,16 @@ source run_one_model.sh [dataset] [method] [MLP_hidden_dim] [Classifier_hidden_d
 ```
 Note that for HAN, please check the readme file in `./src/DGL_HAN/`.
 
-## To reproduce the results in Table 2 (with the processed raw data)
+## To reproduce the results in Table 2(with the processed raw data)
 ```
 source run_all_experiments.sh [method]
 ```
+Notably, if you just want to reproduce the performance of AllSetTransformer in Table 2 without hyperparameter tuning, you can just run:
+```
+source run_AllSetTransformer.sh
+```
+
+**Remark:** We do not fix the random seed in our code so the results might be slightly different. If you find a huge discrepancy, please open an issue.
 
 ## Issues
 If you have any problem about our code, please open an issue **and** @ us (or send us an email) in case the notification doesn't work. Our email can be found in the paper.
