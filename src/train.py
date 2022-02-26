@@ -407,7 +407,7 @@ if __name__ == '__main__':
         degE = scatter(degV[V], E, dim=0, reduce='mean')
         degE = degE.pow(-0.5)
         degV = degV.pow(-0.5)
-        degV[degV.isinf()] = 1
+        degV[torch.isinf(degV)] = 1
         args.UniGNN_degV = degV
         args.UniGNN_degE = degE
     
