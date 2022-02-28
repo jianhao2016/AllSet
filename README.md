@@ -58,7 +58,7 @@ Notably, if you just want to reproduce the performance of AllSetTransformer in T
 source run_AllSetTransformer.sh
 ```
 
-**Remark:** We do not fix the random seed in our code so the results might be slightly different. If you find a huge discrepancy, please open an issue.
+**Remark:** We do not fix the random seed in our code so the results might be slightly different. If you find a huge discrepancy, please open an issue. Also, our table is obtained by complete grid search of hyperparameters and report the test accuracy based on best validation accuracy. So for results that have large variance (i.e. zoo), merely running it for 20 runs with best hyperparameters may still give accuracy different from Table 2. In this case we suggests to either increase the number of runs or follow our grid search exactly.
 
 ## Issues
 If you have any problem about our code, please open an issue **and** @ us (or send us an email) in case the notification doesn't work. Our email can be found in the paper.
