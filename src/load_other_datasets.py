@@ -347,6 +347,10 @@ def load_cornell_dataset(path='../data/raw_data/', dataset = 'amazon',
             node_list += cur_set
             he_list += [he_id] * len(cur_set)
             he_id += 1
+    # shift node_idx to start with 0.
+    node_idx_min = np.min(node_list)
+    node_list = [x - node_idx_min for x in node_list]
+
     edge_index = [node_list + he_list, 
                   he_list + node_list]
 
