@@ -1,5 +1,4 @@
 # AllSet
-**02/26/2022: This is not wrapped up yet. Please stay tuned.**
 
 This is the repo for our paper: [You are AllSet: A Multiset Function Framework for Hypergraph Neural Networks](https://openreview.net/forum?id=hpBTIv2uy_E). We prepared all codes and a subset of datasets used in our experiments.
 
