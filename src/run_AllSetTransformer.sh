@@ -189,25 +189,6 @@ do
             --cuda $cuda \
             --lr $lr
         echo "Finished training on ${dname}"
-    elif [ "$dname" = "NTU2012" ]; then
-        echo =============
-        echo ">>>>  Model:AllSetTransformer (default), Dataset: ${dname}"  
-        python train.py \
-            --method AllSetTransformer \
-            --dname $dname \
-            --All_num_layers 1 \
-            --MLP_num_layers 2 \
-            --feature_noise 0.0 \
-            --heads 1 \
-            --Classifier_num_layers 1 \
-            --MLP_hidden 256 \
-            --Classifier_hidden 256 \
-            --wd 0.0 \
-            --epochs $epochs \
-            --runs $runs \
-            --cuda $cuda \
-            --lr $lr
-        echo "Finished training on ${dname}"
     elif [ "$dname" = "ModelNet40" ]; then
         echo =============
         echo ">>>>  Model:AllSetTransformer (default), Dataset: ${dname}"  
@@ -236,26 +217,7 @@ do
             --All_num_layers 1 \
             --MLP_num_layers 2 \
             --feature_noise 0.0 \
-            --heads 4 \
-            --Classifier_num_layers 1 \
-            --MLP_hidden 64 \
-            --Classifier_hidden 64 \
-            --wd 0.0 \
-            --epochs $epochs \
-            --runs $runs \
-            --cuda $cuda \
-            --lr $lr
-        echo "Finished training on ${dname}"
-    elif [ "$dname" = "yelp" ]; then
-        echo =============
-        echo ">>>>  Model:AllSetTransformer (default), Dataset: ${dname}"  
-        python train.py \
-            --method AllSetTransformer \
-            --dname $dname \
-            --All_num_layers 1 \
-            --MLP_num_layers 2 \
-            --feature_noise 0.0 \
-            --heads 4 \
+            --heads 1 \
             --Classifier_num_layers 1 \
             --MLP_hidden 64 \
             --Classifier_hidden 64 \
