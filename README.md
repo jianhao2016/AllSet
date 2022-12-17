@@ -59,6 +59,9 @@ source run_AllSetTransformer.sh
 
 **Remark:** We do not fix the random seed in our code so the results might be slightly different. If you find a huge discrepancy, please open an issue.
 
+## Compatibility with higher version of PyG
+Please check the [Issue #1](https://github.com/jianhao2016/AllSet/issues/1) for more details. We still recommend to run our code with the exactly same version of PyG.
+
 ## Issues
 If you have any problem about our code, please open an issue **and** @ us (or send us an email) in case the notification doesn't work. Our email can be found in the paper.
 
